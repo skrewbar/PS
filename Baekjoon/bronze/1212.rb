@@ -1,0 +1,1 @@
+puts gets.to_i(8).to_s(2)
