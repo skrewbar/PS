@@ -1,0 +1,1 @@
+puts gets.chomp[-5..-1] == "driip" ? "cute" : "not cute"

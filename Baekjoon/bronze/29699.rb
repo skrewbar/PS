@@ -1,0 +1,1 @@
+puts "WelcomeToSMUPC"[(gets.to_i-1) % 14]
