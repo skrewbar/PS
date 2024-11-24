@@ -11,6 +11,9 @@ for _ in range(m):
     connected_woods[i].append((j, k))
     connected_woods[j].append((i, k))
 
+for i in range(1, n + 1):
+    connected_woods[i].sort(key=lambda e: (-len(connected_woods[e[0]]), -e[0]))
+
 # toca
 toca_dist = [float("inf") for _ in range(n + 1)]
 toca_dist[a] = 0
@@ -26,27 +29,23 @@ while queue:
             heappush(queue, (next_dist, next_))
 
 # hanbyeol
-byeol_dist = [float("inf") for _ in range(n + 1)]
-byeol_dist[c] = 0
-prev = [[] for _ in range(n + 1)]
-queue = deque([c])
+visited = [False for _ in range(n + 1)]
+visited[b] = True
+prev = [None for _ in range(n + 1)]
+queue = deque([b])
 while queue:
     cur = queue.popleft()
 
     for next_, _ in connected_woods[cur]:
-        if byeol_dist[next_] == byeol_dist[cur] + 1:
-            prev[next_].append(cur)
-        if byeol_dist[next_] != float("inf"):
+        if visited[next_]:
             continue
-        byeol_dist[next_] = byeol_dist[cur] + 1
-        prev[next_].append(cur)
+        visited[next_] = True
+        prev[next_] = cur
         queue.append(next_)
- 
-ans = b
-hanbyeol = b
-while hanbyeol != c:
-    hanbyeol = min(
-        prev[hanbyeol], key=lambda w: (byeol_dist[w], -len(connected_woods[w]), -w)
-    )
+
+ans = c
+hanbyeol = c
+while hanbyeol != b:
+    hanbyeol = prev[hanbyeol]
     ans = min(hanbyeol, ans, key=lambda w: (toca_dist[w], w))
 print(ans)
