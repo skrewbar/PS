@@ -1,11 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void fastio() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-}
-
 int fail[1000000];
 void setFail(string s) {
     for (int i = 1, j = 0; i < s.length(); i++) {
@@ -16,7 +11,8 @@ void setFail(string s) {
 
 
 int main() {
-    fastio();
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
     string t, p;
     cin >> t >> p;
