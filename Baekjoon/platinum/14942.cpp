@@ -28,8 +28,7 @@ void setupDist(int now) {
     }
 }
 
-// 1번방을 향해 최대 몇 번 갈 수 있는지
-int upperBoundCeil(int x) {
+int binarySearch(int x) {
     int lo = 0, hi = depth[x] + 1; // 몇 번까지 움직일 수 있는지 [lo, hi)
 
     while (lo < hi) {
@@ -82,6 +81,6 @@ int main() {
     visited[0] = true;
     setupDist(0);
     for (int i = 0; i < n; i++) {
-        cout << upperBoundCeil(i) + 1 << '\n';
+        cout << binarySearch(i) + 1 << '\n';
     }
 }
