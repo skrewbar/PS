@@ -2,3 +2,5 @@
 .cph
 .ruby-lsp
 unfinished
+
+*.exe
