@@ -12,34 +12,46 @@ using ll = long long;
 vector<int> getSuffixArray(const string& s) {
     int n = s.size();
 
-    vector<int> sa(n);
-    vector<int> rank(n);
-    for (int i = 0; i < n; i++) {
+    vector<int> sa(n), newSa(n), rank(n), newRank(n);
+    for (int i = 0; i < n; i++)
         sa[i] = i;
-        rank[i] = s[i] - 'a' + 1;
+
+    ranges::sort(sa, [&](int i, int j) { return s[i] < s[j]; });
+
+    for (int i = 1; i < n; i++) {
+        rank[sa[i]] = rank[sa[i - 1]];
+        if (s[sa[i]] != s[sa[i - 1]])
+            rank[sa[i]]++;
     }
 
-    int k = 1;
-    auto compare = [&](const int i, const int j) {
-        if (rank[i] != rank[j])
-            return rank[i] < rank[j];
+    vector<int> cnt(n);
+    for (int len = 1; rank[sa[n - 1]] != n - 1; len <<= 1) {
+        ranges::fill(cnt, 0);
+        for (int i = 0; i < n; i++)
+            cnt[rank[sa[i]]]++;
+        for (int i = 1; i < (int)cnt.size(); i++)
+            cnt[i] += cnt[i - 1];
+        for (int i = n - 1; i >= 0; i--)
+            if (sa[i] - len >= 0)
+                newSa[--cnt[rank[sa[i] - len]]] = sa[i] - len;
+        for (int i = n - 1; i >= 0; i--)
+            if (sa[i] + len >= n)
+                newSa[--cnt[rank[sa[i]]]] = sa[i];
 
-        int rank_i = i + k < n ? rank[i + k] : -1;
-        int rank_j = j + k < n ? rank[j + k] : -1;
-        return rank_i < rank_j;
-    };
+        swap(sa, newSa);
 
-    vector<int> newRank(n);
-    while (k < n) {
-        ranges::sort(sa, compare);
+        auto compare = [&](int i, int j) {
+            if (rank[i] != rank[j])
+                return rank[i] < rank[j];
+            return (i + len < n ? rank[i + len] : -1) <
+                   (j + len < n ? rank[j + len] : -1);
+        };
 
         newRank[sa[0]] = 0;
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i < n; i++)
             newRank[sa[i]] = newRank[sa[i - 1]] + compare(sa[i - 1], sa[i]);
-        }
 
-        rank = newRank;
-        k <<= 1;
+        swap(rank, newRank);
     }
 
     return sa;
