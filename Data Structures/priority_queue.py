@@ -76,6 +76,3 @@ class PriorityQueue(Generic[T]):
                 now = best
 
         return ret
-
-    def __len__(self):
-        return len(self.heap)
