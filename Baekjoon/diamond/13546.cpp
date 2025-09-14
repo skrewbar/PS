@@ -99,7 +99,7 @@ int main() {
         cin >> l >> r;
     }
 
-    sort(queries, queries + M);
+    sort(queries + 1, queries + M + 1);
     int l, r;
     l = r = (queries[1].l + queries[1].r) >> 1;
     add(l);
