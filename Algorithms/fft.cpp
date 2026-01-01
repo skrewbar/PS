@@ -6,13 +6,16 @@ double pi = acos(-1);
 vector<complex<double>> fft(vector<complex<double>> x, bool inverse) {
     int n = x.size();
 
-    for (int i = 0; i < n; i++) {
-        int rev = 0;
-        for (int j = 0; (1 << j) < n; j++)
-            rev = (rev << 1) + (i & (1 << j) ? 1 : 0);
+    for (int i = 1, j = 0; i < n; i++) {
+        int bit = n >> 1;
+        while (j & bit) {
+            j ^= bit;
+            bit >>= 1;
+        }
+        j |= bit;
 
-        if (i < rev)
-            swap(x[i], x[rev]);
+        if (i < j)
+            swap(x[i], x[j]);
     }
 
     for (int len = 2; len <= n; len <<= 1) {
