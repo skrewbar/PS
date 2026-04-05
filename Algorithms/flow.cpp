@@ -1,5 +1,4 @@
-#include <queue>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 constexpr int INF = 1e9;
