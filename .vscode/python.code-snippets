@@ -1,0 +1,24 @@
+{
+  "Python Template": {
+    "scope": "python",
+    "prefix": "init",
+    "body": [
+      "import sys",
+      "",
+      "input = lambda: sys.stdin.readline().rstrip()",
+      "",
+      "",
+      "def main():",
+      "    $0",
+      "",
+      "",
+      "main()",
+      "",
+    ],
+  },
+  "input multiple ints in one line": {
+    "scope": "python",
+    "prefix": "ints",
+    "body": "map(int, input().split())",
+  },
+}
