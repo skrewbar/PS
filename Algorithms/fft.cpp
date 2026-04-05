@@ -3,7 +3,7 @@ using namespace std;
 
 double pi = acos(-1);
 
-vector<complex<double>> fft(vector<complex<double>> x, bool inverse) {
+void fft(vector<complex<double>>& x, bool inverse) {
     int n = x.size();
 
     for (int i = 1, j = 0; i < n; i++) {
@@ -36,29 +36,4 @@ vector<complex<double>> fft(vector<complex<double>> x, bool inverse) {
     if (inverse)
         for (auto& elem : x)
             elem /= n;
-
-    return x;
-}
-
-int main() {
-    // test codes
-    vector<int> a = {1, 1, 0, 0}, b = {1, 2, 0, 0};
-
-    vector<complex<double>> aa =
-                                fft(vector<complex<double>>(a.begin(), a.end()),
-                                    false),
-                            bb =
-                                fft(vector<complex<double>>(b.begin(), b.end()),
-                                    false);
-
-    vector<complex<double>> c(4);
-    for (int i = 0; i < 4; i++)
-        c[i] = aa[i] * bb[i];
-
-    c = fft(c, true);
-
-    for (int i = 0; i < 4; i++)
-        cout << c[i].real() << ' ';
-
-    return 0;
 }
