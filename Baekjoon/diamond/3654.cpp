@@ -87,10 +87,10 @@ void solve() {
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
             int id[4] = {
-                (i - 1) * m + j,          // R
-                (i - 2) * m + j + n * m,  // U
-                (i - 1) * m + j - 1,      // L
-                (i - 1) * m + j + n * m   // D
+                (i - 1) * m + j - 1,          // R
+                (i - 2) * m + j - 1 + n * m,  // U
+                (i - 1) * m + j - 2,          // L
+                (i - 1) * m + j - 1 + n * m   // D
             };
 
             bool isBlack[4] = {}, isWhite[4] = {};
