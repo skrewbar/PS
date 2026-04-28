@@ -9,7 +9,7 @@
         "-g",
         "${file}",
         "-o",
-        "${fileDirname}/${fileBasenameNoExtension}.a",
+        "${fileDirname}/${fileBasenameNoExtension}.out",
         "-Wall",
         "-std=gnu++23"
       ],

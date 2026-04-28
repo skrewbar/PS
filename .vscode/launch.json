@@ -5,17 +5,25 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "(lldb) 시작",
+      "name": "(lldb) 빌드 및 디버그",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}/${fileBasenameNoExtension}.a",
-      "args": [],
+      "program": "${fileDirname}/${fileBasenameNoExtension}.out",
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
-      "environment": [],
       "externalConsole": true,
       "MIMode": "lldb",
       "preLaunchTask": "C/C++: g++ 활성 파일 빌드"
-    }
+    },
+    {
+      "name": "(lldb) 디버그",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}.out",
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "externalConsole": true,
+      "MIMode": "lldb",
+    },
   ]
 }
