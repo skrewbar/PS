@@ -1,6 +1,8 @@
-# Windows
-*.exe
+# OS
+.DS_Store
+Thumbs.db
 
-# macOS
-*.dSYM
+# binary
 *.out
+*.exe
+*.dSYM/
