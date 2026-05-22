@@ -6,3 +6,6 @@ Thumbs.db
 *.out
 *.exe
 *.dSYM/
+
+# problem files
+*.testcases
