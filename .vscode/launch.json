@@ -25,5 +25,12 @@
       "externalConsole": true,
       "MIMode": "lldb",
     },
+    {
+      "name": "(codelldb) 디버그",
+      "type": "codelldb",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}.out",
+      "cwd": "${fileDirname}",
+    },
   ]
 }
