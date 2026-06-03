@@ -1,0 +1,14 @@
+{
+  "contributes": {
+    "snippets": [
+      {
+        "language": "cpp",
+        "path": "./cpp.code-snippets"
+      },
+      {
+        "language": "python",
+        "path": "./python.code-snippets"
+      }
+    ]
+  }
+}
