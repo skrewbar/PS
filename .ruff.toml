@@ -1,4 +1,5 @@
 [lint]
 ignore = [
-  "E731"  # Do not assign a `lambda` expression, use a `def`
+  "E731",  # Do not assign a `lambda` expression, use a `def`
+  "E741",  # Ambiguous variable name
 ]
