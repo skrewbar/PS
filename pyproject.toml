@@ -1,2 +1,8 @@
 [tool.basedpyright]
 typeCheckingMode = "basic"
+
+[tool.ruff.lint]
+ignore = [
+  "E731",  # Do not assign a `lambda` expression, use a `def`
+  "E741",  # Ambiguous variable name
+]
