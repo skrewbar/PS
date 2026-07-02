@@ -5,32 +5,32 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "(lldb) 빌드 및 디버그",
+      "name": "(gdb) Build and Debug Active File",
       "type": "cppdbg",
       "request": "launch",
       "program": "${fileDirname}/${fileBasenameNoExtension}.out",
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
-      "externalConsole": true,
-      "MIMode": "lldb",
-      "preLaunchTask": "C/C++: g++ 활성 파일 빌드"
+      "MIMode": "gdb",
+      "preLaunchTask": "g++ Build Active File"
     },
     {
-      "name": "(lldb) 디버그",
+      "name": "(lldb) Build and Debug Active File",
       "type": "cppdbg",
       "request": "launch",
       "program": "${fileDirname}/${fileBasenameNoExtension}.out",
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
-      "externalConsole": true,
       "MIMode": "lldb",
+      "preLaunchTask": "g++ Build Active File (macOS)",
+      "externalConsole": true
     },
     {
-      "name": "(codelldb) 디버그",
+      "name": "(codelldb) Debug Active File",
       "type": "codelldb",
       "request": "launch",
       "program": "${fileDirname}/${fileBasenameNoExtension}.out",
-      "cwd": "${fileDirname}",
-    },
+      "cwd": "${fileDirname}"
+    }
   ]
 }

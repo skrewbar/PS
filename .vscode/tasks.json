@@ -2,7 +2,29 @@
   "tasks": [
     {
       "type": "cppbuild",
-      "label": "C/C++: g++ 활성 파일 빌드",
+      "label": "g++ Build Active File",
+      "command": "g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}.out",
+        "-Wall",
+        "-std=gnu++23"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
+      "type": "cppbuild",
+      "label": "g++ Build Active File (macOS)",
       "command": "g++-15",
       "args": [
         "-fdiagnostics-color=always",
@@ -21,7 +43,6 @@
         "kind": "build",
         "isDefault": true
       },
-      "detail": "디버거에서 생성된 작업입니다."
     }
   ],
   "version": "2.0.0"
