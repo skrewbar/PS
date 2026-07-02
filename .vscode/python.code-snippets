@@ -21,4 +21,23 @@
     "prefix": "ints",
     "body": "map(int, input().split())",
   },
+  "Maximum Heap": {
+    "prefix": "maxheap",
+    "body": [
+      "class MaxHeap(list):",
+      "    @staticmethod",
+      "    def _neg(x):",
+      "        return tuple(-i for i in x) if isinstance(x, tuple) else -x",
+      "",
+      "    def push(self, x):",
+      "        heappush(self, self._neg(x))",
+      "",
+      "    def pop(self):",
+      "        return self._neg(heappop(self))",
+      "",
+      "    def top(self):",
+      "        return self._neg(self[0])",
+    ],
+    "description": "MaxHeap wrapper for heapq",
+  },
 }
