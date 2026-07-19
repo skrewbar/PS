@@ -1,5 +1,6 @@
 [tool.basedpyright]
 typeCheckingMode = "basic"
+reportConstantRedefinition = false
 
 [tool.ruff.lint]
 ignore = [
