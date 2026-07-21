@@ -46,7 +46,7 @@
   "all macro": {
     "scope": "cpp",
     "prefix": "allmac",
-    "body": "#define all(v) (v).begin(), (v).end()",
+    "body": "#define all(v) v.begin(), v.end()",
   },
   "compress macro": {
     "scope": "cpp",
