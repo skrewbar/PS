@@ -12,7 +12,14 @@
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
       "MIMode": "gdb",
-      "preLaunchTask": "g++ Build Active File"
+      "preLaunchTask": "g++ Build Active File",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
     },
     {
       "name": "(lldb) Build and Debug Active File",
@@ -23,7 +30,14 @@
       "cwd": "${fileDirname}",
       "MIMode": "lldb",
       "preLaunchTask": "g++ Build Active File (macOS)",
-      "externalConsole": true
+      "externalConsole": true,
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
     },
     {
       "name": "(codelldb) Debug Active File",
