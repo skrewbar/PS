@@ -22,6 +22,7 @@
     "body": "map(int, input().split())",
   },
   "Maximum Heap": {
+    "scope": "python",
     "prefix": "maxheap",
     "body": [
       "class MaxHeap(list):",
