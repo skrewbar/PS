@@ -1,0 +1,8 @@
+{
+  "autoAdd": false,
+  "emojiFormat": "emoji",
+  "scopePrompt": false,
+  "messagePrompt": false,
+  "capitalizeTitle": true,
+  "gitmojisUrl": "https://gist.githubusercontent.com/skrewbar/2a3f52685508f0ee0b3c32762c04b641/raw/cbbaba541a903c9af72c4cd409bccbd20d120cea/gitmojis.json"
+}
