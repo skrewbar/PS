@@ -53,7 +53,7 @@
     "body": [
       "#define compress(v) \\",
       "    sort(all(v));   \\",
-      "    v.erase(unique(all(v)), (v).end())",
+      "    v.erase(unique(all(v)), v.end())",
     ],
   },
   "compare macro": {
