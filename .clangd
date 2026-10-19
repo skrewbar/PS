@@ -1,0 +1,24 @@
+CompileFlags:
+  Add:
+    - -stdlib=libstdc++
+    - -isystem/opt/homebrew/opt/gcc/include/c++/16
+    - -isystem/opt/homebrew/opt/gcc/include/c++/16/aarch64-apple-darwin25
+    - -std=gnu++23
+
+    - -Wall
+    - -Wshadow
+    - -Wfloat-equal
+    - -Wduplicated-cond
+    - -Wlogical-op
+    - -Wnull-dereference
+
+    - -fconstexpr-steps=100000
+
+Index:
+  Background: Skip
+
+Diagnostics:
+  ClangTidy:
+    Add:
+      - clang-diagnostic-*
+      - clang-analyzer-*
