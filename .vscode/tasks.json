@@ -11,7 +11,10 @@
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}.out",
         "-Wall",
-        "-std=gnu++23"
+        "-std=gnu++23",
+        "-D_GLIBCXX_DEBUG",
+        "-DLOCAL",
+        "-I${env:HOME}/.cache/pch"
       ],
       "options": {
         "cwd": "${fileDirname}"
@@ -33,7 +36,10 @@
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}.out",
         "-Wall",
-        "-std=gnu++23"
+        "-std=gnu++23",
+        "-D_GLIBCXX_DEBUG",
+        "-DLOCAL",
+        "-I${env:HOME}/.cache/pch"
       ],
       "options": {
         "cwd": "${fileDirname}"

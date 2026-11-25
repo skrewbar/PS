@@ -4,6 +4,7 @@ CompileFlags:
     - -isystem/opt/homebrew/opt/gcc/include/c++/16
     - -isystem/opt/homebrew/opt/gcc/include/c++/16/aarch64-apple-darwin25
     - -std=gnu++23
+    - -DLOCAL
 
     - -Wall
     - -Wshadow
