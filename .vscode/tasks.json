@@ -25,7 +25,7 @@
     {
       "type": "cppbuild",
       "label": "g++ Build Active File (macOS)",
-      "command": "g++-15",
+      "command": "g++-16",
       "args": [
         "-fdiagnostics-color=always",
         "-g",
